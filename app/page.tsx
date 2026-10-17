@@ -1,69 +1,159 @@
-import Image from "next/image";
+const plants = [
+  {
+    id: 1,
+    name: "Monstera Deliciosa",
+    category: "Indoor Plants",
+    price: 599,
+    image:
+      "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?w=600",
+  },
+  {
+    id: 2,
+    name: "Snake Plant",
+    category: "Easy Care",
+    price: 399,
+    image:
+      "https://images.unsplash.com/photo-1593482892290-f54927ae2b0a?w=600",
+  },
+  {
+    id: 3,
+    name: "Peace Lily",
+    category: "Flowering Plants",
+    price: 499,
+    image:
+      "https://images.unsplash.com/photo-1593691509543-c55fb32e5cee?w=600",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main className="min-h-screen bg-[#faf9f4] text-[#243b2a]">
+      <div className="bg-[#244b35] px-4 py-2 text-center text-sm text-white">
+        Free delivery on orders above ₹999 🌿
+      </div>
+
+      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-green-100 px-6 py-5 md:px-12">
+        <a href="#" className="text-3xl font-bold tracking-tight">
+          weeq<span className="text-[#78945b]">.</span>
+        </a>
+
+        <nav className="flex flex-wrap gap-5 text-sm font-medium">
+          <a href="#home" className="hover:text-green-700">Home</a>
+          <a href="#plants" className="hover:text-green-700">Shop Plants</a>
+          <a href="#about" className="hover:text-green-700">About Us</a>
+        </nav>
+
+        <a
+          href="#plants"
+          className="rounded-full bg-[#244b35] px-5 py-3 text-sm text-white hover:bg-green-800"
+        >
+          Explore Plants →
+        </a>
+      </header>
+
+      <section
+        id="home"
+        className="grid items-center gap-10 px-6 py-16 md:grid-cols-2 md:px-12 md:py-24"
+      >
+        <div>
+          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#78945b]">
+            Bring nature home
+          </p>
+
+          <h1 className="max-w-xl text-5xl font-bold leading-tight md:text-7xl">
+            Make room for a little more green.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+          <p className="mt-6 max-w-lg text-lg leading-8 text-gray-600">
+            Discover beautiful indoor plants that make your home
+            fresher, calmer, and happier.
+          </p>
+
+          <a
+            href="#plants"
+            className="mt-8 inline-block rounded-full bg-[#244b35] px-8 py-4 font-medium text-white transition hover:bg-green-800"
+          >
+            Shop Our Plants →
+          </a>
+
+          <p className="mt-5 text-sm text-gray-500">
+            Carefully grown · Ready for your home · Made for plant lovers
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="overflow-hidden rounded-[2rem] bg-[#e5eadc]">
+          <img
+            src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=1000"
+            alt="Lush green potted plants in a bright home"
+            className="h-[350px] w-full object-cover md:h-[500px]"
+          />
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section id="plants" className="px-6 py-16 md:px-12">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#78945b]">
+              Our favourites
+            </p>
+            <h2 className="text-3xl font-bold md:text-4xl">
+              Find your new plant
+            </h2>
+          </div>
+          <p className="text-gray-500">A little green goes a long way.</p>
+        </div>
+
+        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+          {plants.map((plant) => (
+            <article
+              key={plant.id}
+              className="overflow-hidden rounded-2xl border border-green-100 bg-white transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <img
+                src={plant.image}
+                alt={plant.name}
+                className="h-64 w-full object-cover"
+              />
+
+              <div className="p-5">
+                <p className="text-sm text-[#78945b]">{plant.category}</p>
+                <h3 className="mt-2 text-xl font-semibold">{plant.name}</h3>
+
+                <div className="mt-5 flex items-center justify-between">
+                  <p className="text-lg font-bold">₹{plant.price}</p>
+                  <a
+                    href="#about"
+                    className="rounded-full border border-[#244b35] px-4 py-2 text-sm font-medium hover:bg-[#244b35] hover:text-white"
+                  >
+                    View plant
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        id="about"
+        className="mx-6 mb-16 rounded-3xl bg-[#e9eee2] px-6 py-12 text-center md:mx-12 md:px-12"
+      >
+        <p className="text-sm font-semibold uppercase tracking-widest text-[#78945b]">
+          Grow something beautiful
+        </p>
+        <h2 className="mt-3 text-3xl font-bold">
+          Your home deserves a little nature.
+        </h2>
+        <p className="mx-auto mt-4 max-w-xl leading-7 text-gray-600">
+          From easy-care greens to statement plants, discover your
+          next favourite addition to your home.
+        </p>
+      </section>
+
+      <footer className="bg-[#244b35] px-6 py-8 text-center text-sm text-white">
+        <p className="text-2xl font-bold">weeq.</p>
+        <p className="mt-2">Grow happy. Live green. © 2026 Weeq.</p>
+      </footer>
+    </main>
   );
 }
